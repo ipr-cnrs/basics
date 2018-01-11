@@ -1,0 +1,12 @@
+---
+# defaults file for basics
+
+# Domain
+basics__domain: "{{ ansible_domain }}"
+
+# Manage /etc/hosts
+basics__hosts_localhost_manage: false
+basics__hosts_localhost_content: "{{ ansible_hostname }}.{{ basics__domain }} {{ ansible_hostname }} localhost.localdomain localhost"
+basics__hosts_ipv4_manage: false
+basics__hosts_ipv4_content: "{{ ansible_hostname }}.{{ basics__domain }} {{ ansible_hostname }}"
+
