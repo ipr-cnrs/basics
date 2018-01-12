@@ -1,3 +1,7 @@
+## v1.0.X
+
+## Enhancements
+* Add example playbook.
 
 ## v1.0
 

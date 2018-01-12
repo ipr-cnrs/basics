@@ -23,13 +23,25 @@ Manage some basics configuration for IPR's servers.
 
 ## Example Playbook
 
-* Use defaults vars :
+* If you want to manage both localhost (127.0.0.1) and permanent IP (lan/ipv4) lines :
 
 ``` yml
 - hosts: serverXYZ
   roles:
     - role: ipr-cnrs.basics
+      basics__hosts_localhost_manage: true
+      basics__hosts_ipv4_manage: true
 ```
+
+* If the domain is not defined on the remote host, you should set the `basics__domain` variable :
+
+``` yml
+- hosts: serverXYZ
+  roles:
+    - role: ipr-cnrs.basics
+      basics__hosts_localhost_manage: true
+      basics__domain: 'mydomain.org'
+````
 
 ## Configuration
 
