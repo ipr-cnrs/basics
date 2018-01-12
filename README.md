@@ -48,7 +48,9 @@ Manage some basics configuration for IPR's servers.
 ### Hosts
 - Ensure to have the correct fqdn and hostname in /etc/hosts.
   - You can define the domain if it's not correct on the remote host.
-  - You can choose to define the localhost (127.0.0.1) line or/and the ipv4 (lan) line.
+  - You can choose to define the localhost (127.0.0.1) line content.
+  - You can choose to define the permanent ip (127.0.0.1) line content.
+    - All other lines that contains hostname without this permanent ip will be removed.
 
 ## Development
 

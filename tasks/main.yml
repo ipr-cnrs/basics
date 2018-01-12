@@ -1,6 +1,8 @@
 ---
 # tasks file for basics
 
+## Modify /etc/hosts
+
 - name: Set 127.0.0.1 line in hosts file
   lineinfile:
     dest: /etc/hosts
@@ -20,3 +22,14 @@
     backup: yes
   when: (basics__hosts_ipv4_manage and
          ansible_default_ipv4.address is defined)
+  register: basics__register_ipv4_line
+
+- name: Purge other lines with hostname
+  lineinfile:
+    dest: /etc/hosts
+    state: absent
+    regexp: '^(?!({{ ansible_default_ipv4.address }})).*{{ ansible_hostname }}'
+    backup: yes
+  when: basics__register_ipv4_line.changed
+
+## }}}
