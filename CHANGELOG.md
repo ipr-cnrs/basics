@@ -2,6 +2,7 @@
 
 ## Enhancements
 * Add example playbook.
+* localhost line sould not contain hostname information (see https://www.debian.org/doc/manuals/debian-reference/ch05.en.html#_the_hostname_resolution).
 
 ## v1.0
 

@@ -17,7 +17,7 @@ Manage some basics configuration for IPR's servers.
 
 * **basics__domain** : Domain to use [default : `{{ ansible_domain }}`].
 * **basics__hosts_localhost_manage** : If the localhost (127.0.0.1) line should be managed [default : `false`].
-* **basics__hosts_localhost_content** : Content of the localhost (127.0.0.1) line [default : `{{ ansible_hostname }}.{{ basics__domain }} {{ ansible_hostname }} localhost.localdomain localhost`].
+* **basics__hosts_localhost_content** : Content of the localhost (127.0.0.1) line [default : `localhost.localdomain localhost`].
 * **basics__hosts_ipv4_manage** : If the ipv4 (lan) line should be managed [default : `false`].
 * **basics__hosts_ipv4_content** : Content of the ipv4 (lan) line [default : `{{ ansible_hostname }}.{{ basics__domain }} {{ ansible_hostname }}`].
 
