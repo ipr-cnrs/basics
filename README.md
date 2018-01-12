@@ -18,12 +18,12 @@ Manage some basics configuration for IPR's servers.
 * **basics__domain** : Domain to use [default : `{{ ansible_domain }}`].
 * **basics__hosts_localhost_manage** : If the localhost (127.0.0.1) line should be managed [default : `false`].
 * **basics__hosts_localhost_content** : Content of the localhost (127.0.0.1) line [default : `localhost.localdomain localhost`].
-* **basics__hosts_ipv4_manage** : If the ipv4 (lan) line should be managed [default : `false`].
-* **basics__hosts_ipv4_content** : Content of the ipv4 (lan) line [default : `{{ ansible_hostname }}.{{ basics__domain }} {{ ansible_hostname }}`].
+* **basics__hosts_ipv4_manage** : If the ipv4 address line should be managed [default : `false`].
+* **basics__hosts_ipv4_content** : Content of the ipv4 address line [default : `{{ ansible_hostname }}.{{ basics__domain }} {{ ansible_hostname }}`].
 
 ## Example Playbook
 
-* If you want to manage both localhost (127.0.0.1) and permanent IP (lan/ipv4) lines :
+* If you want to manage both localhost (127.0.0.1) and permanent IP (ipv4) lines :
 
 ``` yml
 - hosts: serverXYZ
@@ -39,18 +39,19 @@ Manage some basics configuration for IPR's servers.
 - hosts: serverXYZ
   roles:
     - role: ipr-cnrs.basics
-      basics__hosts_localhost_manage: true
       basics__domain: 'mydomain.org'
+      basics__hosts_ipv4_manage: true
 ````
 
 ## Configuration
 
 ### Hosts
-- Ensure to have the correct fqdn and hostname in /etc/hosts.
-  - You can define the domain if it's not correct on the remote host.
-  - You can choose to define the localhost (127.0.0.1) line content.
-  - You can choose to define the permanent ip (127.0.0.1) line content.
-    - All other lines that contains hostname without this permanent ip will be removed.
+
+Ensure to have the correct fqdn and hostname in /etc/hosts :
+- You can define the domain if it's not correct on the remote host.
+- You can choose to define the localhost (127.0.0.1) line content.
+- You can choose to define the permanent ip (ipv4) line content.
+  - All other lines that contains hostname without this permanent ip address will be removed.
 
 ## Development
 
