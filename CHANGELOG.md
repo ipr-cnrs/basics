@@ -1,6 +1,11 @@
+## v1.0.2
+
+### Enhancements
+* Disable the management of /etc/hosts by Proxmox.
+
 ## v1.0.1
 
-## Enhancements
+### Enhancements
 * Add example playbook.
 * localhost line sould not contain hostname information (see https://www.debian.org/doc/manuals/debian-reference/ch05.en.html#_the_hostname_resolution).
 * Purge /etc/hosts of multiple lines that contains $HOSTNAME without the default ipv4 ip address.

@@ -10,3 +10,5 @@ basics__hosts_localhost_content: "localhost.localdomain localhost"
 basics__hosts_ipv4_manage: false
 basics__hosts_ipv4_content: "{{ ansible_hostname }}.{{ basics__domain }} {{ ansible_hostname }}"
 
+# Proxmox
+basics__proxmox_disable_hosts: True

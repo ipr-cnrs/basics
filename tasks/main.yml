@@ -1,7 +1,7 @@
 ---
 # tasks file for basics
 
-## Modify /etc/hosts
+## Modify /etc/hosts {{{
 
 - name: Config host - Set 127.0.0.1 line in hosts file
   lineinfile:
@@ -31,5 +31,15 @@
     backup: yes
   when: (basics__hosts_ipv4_manage and
          ansible_default_ipv4.address is defined)
+
+## }}}
+
+## Proxmox {{{
+
+- name: Disable modification of /etc/hosts by Proxmox
+  file:
+    path: /etc/.pve-ignore.hosts
+    state: '{{ "touch" if basics__proxmox_disable_hosts else "absent" }}'
+  when:  ansible_virtualization_type == "lxc"
 
 ## }}}

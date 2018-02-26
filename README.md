@@ -20,6 +20,7 @@ Manage some basics configuration for IPR's servers.
 * **basics__hosts_localhost_content** : Content of the localhost (127.0.0.1) line [default : `localhost.localdomain localhost`].
 * **basics__hosts_ipv4_manage** : If the ipv4 address line should be managed [default : `false`].
 * **basics__hosts_ipv4_content** : Content of the ipv4 address line [default : `{{ ansible_hostname }}.{{ basics__domain }} {{ ansible_hostname }}`].
+* **basics__proxmox_disable_hosts** : Disable the management of **/etc/hosts** file by Proxmox for LXC containers [default : `True`].
 
 ## Example Playbook
 
@@ -52,6 +53,9 @@ Ensure to have the correct fqdn and hostname in /etc/hosts :
 - You can choose to define the localhost (127.0.0.1) line content.
 - You can choose to define the permanent ip (ipv4) line content.
   - All other lines that contains hostname without this permanent ip address will be removed.
+
+For LXC containers, also ensure to disable the management of /etc/hosts by Proxmox :
+- Touch a /etc/.pve-ignore.hosts file.
 
 ## Development
 
