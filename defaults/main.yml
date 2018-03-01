@@ -11,4 +11,6 @@ basics__hosts_ipv4_manage: false
 basics__hosts_ipv4_content: "{{ ansible_hostname }}.{{ basics__domain }} {{ ansible_hostname }}"
 
 # Proxmox
-basics__proxmox_disable_hosts: True
+basics__proxmox_disable: []
+basics__proxmox_group_disable: []
+basics__proxmox_host_disable: []

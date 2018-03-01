@@ -1,3 +1,8 @@
+## v1.0.3
+
+### Fixes
+* Ensure to disable management of files by Proxmox only one time.
+
 ## v1.0.2
 
 ### Enhancements

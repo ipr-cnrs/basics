@@ -1,4 +1,6 @@
 ---
+# .. vim: foldmarker=[[[,]]]:foldmethod=marker
+#
 # tasks file for basics
 
 ## Modify /etc/hosts {{{
@@ -34,12 +36,14 @@
 
 ## }}}
 
-## Proxmox {{{
-
-- name: Disable modification of /etc/hosts by Proxmox
-  file:
-    path: /etc/.pve-ignore.hosts
-    state: '{{ "touch" if basics__proxmox_disable_hosts else "absent" }}'
+# Proxmox [[[1
+- name: Disable modification of files by Proxmox
+  copy:
+    content: ""
+    dest: '{{ (item.path | dirname) + "/.pve-ignore." + (item.path | basename) }}'
+  with_flattened:
+    - '{{ basics__proxmox_disable }}'
+    - '{{ basics__proxmox_group_disable }}'
+    - '{{ basics__proxmox_host_disable }}'
   when:  ansible_virtualization_type == "lxc"
 
-## }}}
