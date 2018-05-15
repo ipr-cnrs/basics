@@ -36,5 +36,13 @@ basics__resolvconf_packages:
 basics__resolvconf_enabled: False
 
                                                                    # ]]]
+# .. envvar:: basics__resolvconf_domains [[[
+#
+# List of domains used as search suffixes when resolving host names.
+#
+basics__resolvconf_domains:
+  - '{{ ansible_domain }}'
+
+                                                                   # ]]]
 
                                                                    # ]]]

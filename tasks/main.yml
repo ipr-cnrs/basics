@@ -57,3 +57,12 @@
     - '{{ basics__resolvconf_packages }}'
   when: basics__resolvconf_enabled|bool
 
+- name: Configure Resolvconf with domains
+  template:
+    src: '../templates/etc/resolvconf/resolv.conf.d/base.j2'
+    dest: '/etc/resolvconf/resolv.conf.d/base'
+    owner: root
+    group: root
+    mode: '0644'
+  when: basics__resolvconf_enabled|bool
+

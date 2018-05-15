@@ -2,6 +2,7 @@
 
 ### Enhancements
 * Allow to install Resolvconf.
+* Manage Resolvconf base configuration file.
 
 ## v1.0.3
 

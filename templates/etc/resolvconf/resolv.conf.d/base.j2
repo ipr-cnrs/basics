@@ -1,0 +1,8 @@
+# This file is managed remotely, all changes will be lost
+{% for server in ansible_dns['nameservers'] %}
+nameserver {{ server }}
+{% endfor %}
+{% for domain in basics__resolvconf_domains %}
+domain {{ domain }}
+search {{ domain }}
+{% endfor %}
