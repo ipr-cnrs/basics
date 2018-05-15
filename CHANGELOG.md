@@ -1,3 +1,8 @@
+## v1.X
+
+### Enhancements
+* Allow to install Resolvconf.
+
 ## v1.0.3
 
 ### Fixes

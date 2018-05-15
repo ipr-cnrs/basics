@@ -47,3 +47,13 @@
     - '{{ basics__proxmox_host_disable }}'
   when:  ansible_virtualization_type == "lxc"
 
+# Resolvconf [[[1
+- name: Ensure Resolvconf required packages are in there desired state
+  package:
+    name: '{{ item }}'
+    state: 'present'
+    install_recommends: False
+  with_flattened:
+    - '{{ basics__resolvconf_packages }}'
+  when: basics__resolvconf_enabled|bool
+

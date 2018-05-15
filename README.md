@@ -21,6 +21,8 @@ Manage some basics configuration for IPR's servers.
 * **basics__hosts_ipv4_manage** : If the ipv4 address line should be managed [default : `false`].
 * **basics__hosts_ipv4_content** : Content of the ipv4 address line [default : `{{ ansible_hostname }}.{{ basics__domain }} {{ ansible_hostname }}`].
 * **basics__proxmox_*disable** : Allow to disable the management of some files by Proxmox for LXC containers [default : `[]`].
+* **basics__resolvconf_packages** : List of Resolvconf packages to install [default : `resolvconf`].
+* **basics__resolvconf_enabled** : Enable or disable support for Resolvconf [default : `False`].
 
 ## Example Playbook
 
@@ -55,6 +57,10 @@ Ensure to have the correct fqdn and hostname in /etc/hosts :
   - All other lines that contains hostname without this permanent ip address will be removed.
 
 For LXC containers, you also have the possibility to disable the management of some files (/etc/hosts,…) by Proxmox. See [Proxmox wiki about LXC][wiki proxmox lxc].
+
+## Resolvconf
+
+If specified, Resolvconf is installed to fix the domain's informations given by the DHCP server.
 
 ## Development
 

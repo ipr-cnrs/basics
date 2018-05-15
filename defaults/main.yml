@@ -1,5 +1,8 @@
 ---
-# defaults file for basics
+# .. vim: foldmarker=[[[,]]]:foldmethod=marker
+#
+# ipr-cnrs.basics default variables [[[
+# =====================================
 
 # Domain
 basics__domain: "{{ ansible_domain }}"
@@ -14,3 +17,24 @@ basics__hosts_ipv4_content: "{{ ansible_hostname }}.{{ basics__domain }} {{ ansi
 basics__proxmox_disable: []
 basics__proxmox_group_disable: []
 basics__proxmox_host_disable: []
+
+# Resolvconf [[[
+# --------------
+
+# .. envvar:: basics__resolvconf_packages [[[
+#
+# List of Resolvconf packages to install.
+basics__resolvconf_packages:
+  - 'resolvconf'
+
+                                                                   # ]]]
+# .. envvar:: basics__resolvconf_enabled [[[
+#
+# Enable or disable support for Resolvconf on a given host. Disabling this
+# option does not remove existing installation and configuration.
+#
+basics__resolvconf_enabled: False
+
+                                                                   # ]]]
+
+                                                                   # ]]]
