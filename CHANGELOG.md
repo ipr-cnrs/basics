@@ -4,6 +4,7 @@
 * Allow to install Resolvconf.
 * Manage Resolvconf base configuration file.
 * Restart Resolvconf service if any modification on configuration file.
+* Resolvconf default configuration is set from ansible facts.
 
 ## v1.0.3
 

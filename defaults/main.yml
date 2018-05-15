@@ -24,6 +24,7 @@ basics__proxmox_host_disable: []
 # .. envvar:: basics__resolvconf_packages [[[
 #
 # List of Resolvconf packages to install.
+#
 basics__resolvconf_packages:
   - 'resolvconf'
 
@@ -42,6 +43,13 @@ basics__resolvconf_enabled: False
 #
 basics__resolvconf_domains:
   - '{{ ansible_domain }}'
+
+                                                                   # ]]]
+# .. envvar:: basics__resolvconf_nameservers [[[
+#
+# List of nameservers to use to resolv host names.
+#
+basics__resolvconf_nameservers: '{{ ansible_dns.nameservers }}'
 
                                                                    # ]]]
 # .. envvar:: basics__resolvconf_service_name [[[

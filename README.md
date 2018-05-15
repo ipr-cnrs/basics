@@ -24,6 +24,7 @@ Manage some basics configuration for IPR's servers.
 * **basics__resolvconf_packages** : List of Resolvconf packages to install [default : `resolvconf`].
 * **basics__resolvconf_enabled** : Enable or disable support for Resolvconf [default : `False`].
 * **basics__resolvconf_domains** : List of domains used as search suffixes with Resolvconf [default : `{{ ansible_domain }}`].
+* **basics__resolvconf_nameservers** : List of nameservers to use to resolv host names with Resolvconf [default : `{{ ansible_dns.nameservers }}`].
 * **basics__resolvconf_service_name** : The Resolvconf service name to manage [default : `resolvconf`].
 
 ## Example Playbook
@@ -63,7 +64,7 @@ For LXC containers, you also have the possibility to disable the management of s
 ## Resolvconf
 
 * If specified, Resolvconf is installed to fix the domain's informations given by the DHCP server.
-* Configure a default configuration file with the given informations (list of domains) and system informations (list of nameserver).
+* Configure a default configuration file with the given informations (list of domains and nameservers).
 * Ensure to restart the service if any modification in configuration file.
 
 ## Development
