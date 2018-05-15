@@ -3,6 +3,7 @@
 ### Enhancements
 * Allow to install Resolvconf.
 * Manage Resolvconf base configuration file.
+* Restart Resolvconf service if any modification on configuration file.
 
 ## v1.0.3
 

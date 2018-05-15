@@ -44,5 +44,11 @@ basics__resolvconf_domains:
   - '{{ ansible_domain }}'
 
                                                                    # ]]]
+# .. envvar:: basics__resolvconf_service_name [[[
+#
+# The Resolvconf service name to manage.
+basics__resolvconf_service_name: 'resolvconf'
+
+                                                                   # ]]]
 
                                                                    # ]]]

@@ -1,2 +1,7 @@
 ---
 # handlers file for basics
+- name: restart resolvconf service
+  service:
+    name: '{{ basics__resolvconf_service_name }}'
+    state: '{{ "restarted" if (basics__resolvconf_enabled | bool) }}'
+    enabled: '{{ basics__resolvconf_enabled | bool }}'
