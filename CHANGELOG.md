@@ -1,5 +1,10 @@
 ## v1.X
 
+### Fix
+* Set empty dependencies line to fix Galaxy warning.
+
+## v1.1
+
 ### Enhancements
 * Allow to install Resolvconf.
 * Manage Resolvconf base configuration file.
