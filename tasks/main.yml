@@ -10,7 +10,7 @@
     dest: /etc/hosts
     state: present
     regexp: "^{{ ansible_lo.ipv4.address }}"
-    line: "{{ ansible_lo.ipv4.address }}	{{ basics__hosts_localhost_content }}"
+    line: "{{ ansible_lo.ipv4.address }}       {{ basics__hosts_localhost_content }}"
     backup: yes
   when: (basics__hosts_localhost_manage and
          ansible_lo.ipv4.address is defined)
@@ -20,7 +20,7 @@
     dest: /etc/hosts
     state: present
     regexp: "^{{ ansible_default_ipv4.address }}"
-    line: "{{ ansible_default_ipv4.address }}	{{ basics__hosts_ipv4_content }}"
+    line: "{{ ansible_default_ipv4.address }}       {{ basics__hosts_ipv4_content }}"
     backup: yes
   when: (basics__hosts_ipv4_manage and
          ansible_default_ipv4.address is defined)
