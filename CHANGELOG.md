@@ -1,9 +1,10 @@
-## v1.X
+## v1.1.1
 
 ### Fix
 * Set empty dependencies line to fix Galaxy warning.
+* Deprecation warning in favor of debops.netbase role.
 
-## v1.1
+## v1.1.0
 
 ### Enhancements
 * Allow to install Resolvconf.
@@ -29,7 +30,7 @@
 * Purge /etc/hosts of multiple lines that contains $HOSTNAME without the default ipv4 ip address.
 * Purge conditions of /etc/hosts are the same as permanent ip address (ipv4).
 
-## v1.0
+## v1.0.0
 
 ### Features
 * Manage localhost line in /etc/hosts.

@@ -1,5 +1,9 @@
 # Basics
 
+This content is mainly deprecated and i start using [Debops Netbase role][debops netbase role]
+which comes with most of this configuration (more and better).
+TODO : A specific role to manage `resolvconf` might be a good idea.
+
 1. [Overview](#overview)
 2. [Role Variables](#role-variables)
 3. [Example Playbook](#example-playbook)
@@ -47,7 +51,7 @@ Manage some basics configuration for IPR's servers.
     - role: ipr-cnrs.basics
       basics__domain: 'mydomain.org'
       basics__hosts_ipv4_manage: true
-````
+```
 
 ## Configuration
 
@@ -91,3 +95,4 @@ Jérémy Gardais
 [wtfpl website]: http://www.wtfpl.net/about/
 [ipr website]: https://ipr.univ-rennes1.fr/
 [wiki proxmox lxc]: https://pve.proxmox.com/wiki/Linux_Container#_guest_operating_system_configuration
+[debops netbase role]: https://docs.debops.org/en/master/ansible/roles/debops.netbase/index.html
