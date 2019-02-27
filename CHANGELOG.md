@@ -4,6 +4,7 @@
 * Fix E405 Remote package tasks should have a retry.
 * Use to_nice_json to manage packages list.
 * Fix E203 Most files should not contain tabs.
+* Fix E404 Doesn't need a relative path in role.
 
 ## v1.1.1
 
