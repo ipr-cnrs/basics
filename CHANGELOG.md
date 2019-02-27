@@ -1,8 +1,13 @@
+## v1.1.2
+
+### Fix
+* Fix E405 Remote package tasks should have a retry.
+
 ## v1.1.1
 
 ### Fix
 * Set empty dependencies line to fix Galaxy warning.
-* Deprecation warning in favor of debops.netbase role.
+* Deprecation warning in favor of debops.netbase and debops.resources role.
 
 ## v1.1.0
 

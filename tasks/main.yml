@@ -55,6 +55,8 @@
     install_recommends: False
   with_flattened:
     - '{{ basics__resolvconf_packages }}'
+  register: resolv_pkg_result
+  until: resolv_pkg_result is success
   when: basics__resolvconf_enabled|bool
 
 - name: Configure Resolvconf with domains
