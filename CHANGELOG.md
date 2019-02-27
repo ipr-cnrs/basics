@@ -2,6 +2,7 @@
 
 ### Fix
 * Fix E405 Remote package tasks should have a retry.
+* Use to_nice_json to manage packages list.
 
 ## v1.1.1
 

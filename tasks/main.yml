@@ -54,7 +54,7 @@
     state: 'present'
     install_recommends: False
   with_flattened:
-    - '{{ basics__resolvconf_packages }}'
+    - '{{ basics__resolvconf_packages | to_nice_json }}'
   register: resolv_pkg_result
   until: resolv_pkg_result is success
   when: basics__resolvconf_enabled|bool
