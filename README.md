@@ -2,7 +2,9 @@
 
 This content is mainly deprecated and i start using [Debops Netbase role][debops netbase role]
 which comes with most of this configuration (more and better).
-TODO : A specific role to manage `resolvconf` might be a good idea.
+The [Debops Ifupdown role][debops ifupdown role] can manage the DNS search and nameservers,
+[see the documentation][debops ifupdown dns] for more informations and the
+[Debops Resolvconf role][debops resolvconf role] can also give more possibilities.
 
 1. [Overview](#overview)
 2. [Role Variables](#role-variables)
@@ -96,3 +98,5 @@ Jérémy Gardais
 [ipr website]: https://ipr.univ-rennes1.fr/
 [wiki proxmox lxc]: https://pve.proxmox.com/wiki/Linux_Container#_guest_operating_system_configuration
 [debops netbase role]: https://docs.debops.org/en/master/ansible/roles/debops.netbase/index.html
+[debops ifupdown role]: https://docs.debops.org/en/master/ansible/roles/debops.ifupdown/index.html
+[debops resolvconf role]: https://docs.debops.org/en/master/ansible/roles/debops.resolvconf/index.html
